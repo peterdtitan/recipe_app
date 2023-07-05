@@ -140,6 +140,13 @@ This project is run locally and has no deployments yet.
 - LinkedIn: [Peter OKorafor](https://linkedin.com/in/peterokorafor)
 
 
+👤 **Santosh Konappanavar**
+
+- GitHub: [@Santosh-Konappanavar](https://github.com/Santosh-Konappanavar)
+- Twitter: [@SantoshKonapp1](https://twitter.com/SantoshKonappa1)
+- LinkedIn: [@Santosh Konappanavar](https://www.linkedin.com/in/santosh-konappanavar/)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
