@@ -12,8 +12,41 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+    <main class="flex flex-col">
+      <nav class="flex item-center justify-between w-full p-6 bg-slate-700 text-white">
+        <div class="flex items-center">
+          <%= link_to "RecipeApp", root_path, class: "text-2xl font-bold" %>
+        </div>
+
+        <div class="flex items-center">
+          <%= link_to "Recipes" %>
+          <% if user_signed_in? %>
+              <%= link_to "New Recipe", new_recipe_path, class: "ml-4" %>
+              <%= link_to "My Recipes", recipes_path, class: "ml-4" %>
+              <%= link_to "My Account", edit_user_registration_path, class: "ml-4" %>
+          <% end %>
+        </div>
+
+        <div class="flex items-center">
+          <% if user_signed_in? %>
+            <%
+=begin%>
+ <%= link_to "Sign out", destroy_user_session_path, method: :destroy, class: "ml-4" %> 
+<%
+=end%>
+          <% else %>
+            <%= link_to "Sign up", new_user_registration_path, class: "ml-4" %>
+            <%= link_to "Sign in", new_user_session_path, class: "ml-4" %>
+          <% end %>
+        </div>
+      </nav>
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <div class="px-10 mt-6">
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>
