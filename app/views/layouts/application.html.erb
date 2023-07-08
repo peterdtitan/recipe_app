@@ -19,7 +19,6 @@
         </div>
 
         <div class="flex items-center">
-          <%= link_to "Recipes" %>
           <% if user_signed_in? %>
               <%= link_to "New Recipe", new_recipe_path, class: "ml-4" %>
               <%= link_to "My Recipes", recipes_path, class: "ml-4" %>
@@ -35,8 +34,8 @@
 <%
 =end%>
           <% else %>
-            <%= link_to "Sign up", new_user_registration_path, class: "ml-4" %>
-            <%= link_to "Sign in", new_user_session_path, class: "ml-4" %>
+            <%= link_to "Sign up", new_user_registration_path, class: "ml-4 bg-white text-black p-2 rounded-md hover:bg-emerald-400" %>
+            <%= link_to "Sign in", new_user_session_path, class: "ml-4 bg-white text-black p-2 rounded-md hover:bg-red-400" %>
           <% end %>
         </div>
       </nav>

@@ -8,7 +8,28 @@
     <%= link_to 'New food', new_food_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="foods" class="min-w-full">
-    <%= render @foods %>
+  <div id="foods" class="min-w-full flex flex-col items-center justify-center mt-10">
+    <table class="min-w-full border">
+      <thead>
+        <tr>
+          <th class="px-6 py-3 bg-gray-200 text-gray-700 border-b">Name</th>
+          <th class="px-6 py-3 bg-gray-200 text-gray-700 border-b">Measurement Unit</th>
+          <th class="px-6 py-3 bg-gray-200 text-gray-700 border-b">Unit Price</th>
+          <th class="px-6 py-3 bg-gray-200 text-gray-700 border-b">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @foods.each do |food| %>
+          <tr>
+            <td class="ml-2 px-6 py-4 border border-gray-200"><%= food.name %></td>
+            <td class="ml-2 px-6 py-4 border border-gray-200"><%= food.measurement_unit %></td>
+            <td class="ml-2 px-6 py-4 border border-gray-200"><%= food.price %></td>
+            <td class="ml-2 px-6 py-4 border border-gray-200">
+              <%= link_to 'Delete', food_path(food), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-red-600 ml-2" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>

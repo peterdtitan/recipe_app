@@ -55,15 +55,28 @@ class UsersController < ApplicationController
     end
   end
 
+  # Remove user session and log out
+  def logout
+    session[:user_id] = nil
+    redirect_to root_path, notice: "Logged out!"
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find_by(id: params[:id])
   end
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end 
+
+  # Authorize the user to ensure they can only access and modify their own resources
+  def authorize_user
+    unless @user == current_user
+      redirect_to root_path, alert: "You are not authorized to perform this action."
+    end
   end
 end
