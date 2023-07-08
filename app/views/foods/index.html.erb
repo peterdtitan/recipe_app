@@ -23,7 +23,7 @@
           <tr>
             <td class="ml-2 px-6 py-4 border border-gray-200"><%= food.name %></td>
             <td class="ml-2 px-6 py-4 border border-gray-200"><%= food.measurement_unit %></td>
-            <td class="ml-2 px-6 py-4 border border-gray-200"><%= food.price %></td>
+            <td class="ml-2 px-6 py-4 border border-gray-200">$<%= food.price %></td>
             <td class="ml-2 px-6 py-4 border border-gray-200">
               <%= link_to 'Delete', food_path(food), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-red-600 ml-2" %>
             </td>

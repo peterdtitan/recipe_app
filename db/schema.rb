@@ -62,7 +62,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_08_083350) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
-  add_foreign_key "recipe_foods", "foods"
-  add_foreign_key "recipe_foods", "recipes"
 end
