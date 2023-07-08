@@ -20,8 +20,9 @@
 
         <div class="flex items-center">
           <% if user_signed_in? %>
+              <%= link_to "Foods", foods_path, class: "ml-4" %>
+              <%= link_to "Recipes", recipes_path, class: "ml-4" %>
               <%= link_to "New Recipe", new_recipe_path, class: "ml-4" %>
-              <%= link_to "My Recipes", recipes_path, class: "ml-4" %>
               <%= link_to "My Account", edit_user_registration_path, class: "ml-4" %>
           <% end %>
         </div>
