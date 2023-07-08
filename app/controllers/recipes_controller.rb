@@ -6,6 +6,10 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def public_recipes
+    @recipes = Recipe.includes(:user).where(public: true).order(created_at: :desc)
+  end
+
   # GET /recipes/1 or /recipes/1.json
   def show; end
 
